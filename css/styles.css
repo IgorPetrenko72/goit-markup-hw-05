@@ -15,9 +15,7 @@
 
 body {
   font-family: var(--main-font);
-  text-decoration: none;
   font-size: 14px;
-  list-style: none;
   letter-spacing: 0.03em;
 }
 
@@ -63,7 +61,6 @@ address {
   text-decoration: none;
   margin: 0;
   padding: 0;
-  transition: color var(--trns-hover);
 }
 
 /* reset end */
@@ -132,12 +129,17 @@ address {
   display: block;
   color: var(--filter-btn);
   padding: 32px 0px;
+  transition: color var(--trns-hover);
 }
 
 .link-nav not-last-child {
   margin-right: 50px;
 }
 
+.link-nav:hover,
+.link-nav:focus {
+  color: var(--bg-btn);
+}
 .current {
   color: var(--bg-btn);
 }
@@ -153,11 +155,6 @@ address {
   border-radius: 2px;
 
   background-color: #2196f3;
-}
-
-.link:hover,
-.link:focus {
-  color: var(--bg-btn);
 }
 
 /*address header*/
@@ -337,17 +334,17 @@ address {
 
 .works-description {
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   bottom: 0;
-  right: 0;
   width: 100%;
+  height: 70px;
 
   font-weight: 700;
   line-height: calc(16 / 14);
-  text-align: center;
-  letter-spacing: 0.03em;
   color: var(--color-btn);
-  padding-top: 27px;
-  padding-bottom: 27px;
   text-transform: uppercase;
   background-color: #2f303acc;
 }
@@ -414,7 +411,7 @@ address {
   background-color: var(--color-btn);
   border-radius: 50%;
 
-  transition: color, background-color var(--trns-hover);
+  transition: color var(--trns-hover), background-color var(--trns-hover);
 }
 
 .socials-link:hover,
@@ -450,16 +447,15 @@ address {
   align-items: center;
   justify-content: center;
 
-  border: 1px solid #afb1b8;
+  border: 1px solid currentColor;
   border-radius: 4px;
   color: #afb1b8;
 
-  transition: color, border-color var(--trns-hover);
+  transition: color var(--trns-hover);
 }
 
 .clients-link:hover,
 .clients-link:focus {
-  border-color: var(--bg-btn);
   color: var(--bg-btn);
 }
 
@@ -486,7 +482,7 @@ address {
   letter-spacing: 0.03em;
   border-radius: 4px;
   
-  transition: color, background-color, box-shadow, var(--trns-hover);
+  transition: color var(--trns-hover), background-color var(--trns-hover), box-shadow var(--trns-hover);
 }
 
 .filter-button:nth-of-type(1) {
@@ -510,9 +506,8 @@ address {
   gap: 30px;
 }
 
-.container-bg {
+.project-link {
   display: block;
-  box-sizing: border-box;
   transition: box-shadow, var(--trns-hover);
 }
 
@@ -534,10 +529,13 @@ address {
   transition: transform var(--trns-hover);
 }
 
-.container-bg:hover .portfolio-overlay {
+.project-link:hover .portfolio-overlay {
   transform: translateY(0)
 }
 
+.project-link:focus .portfolio-overlay {
+  transform: translateY(0)
+}
 .portfolio-description {
   position: absolute;
   padding: 63px 24px;
@@ -546,8 +544,8 @@ address {
   color: var(--color-btn);
 }
 
-.container-bg:hover,
-.container-bg:focus {
+.project-link:hover,
+.project-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
@@ -609,17 +607,28 @@ address {
 .address-map {
   color: var(--color-btn);
   font-style: normal;
+  transition: color var(--trns-hover);
 }
-
+.address-map:hover,
+.address-map:focus{
+  color: var(--bg-btn);
+}
 .mailto-footer,
 .tel-footer {
   color: #ffffff99;
+  transition: color var(--trns-hover);
 }
-
+.mailto-footer:hover,
+.tel-footer:hover{
+  color: var(--bg-btn);
+}
+.mailto-footer:focus,
+.tel-footer:focus {
+  color: var(--bg-btn);
+}
 .join-title-footer {
   font-weight: 700;
   line-height: calc(16 / 14);
-  letter-spacing: 0.03em;
   color: var(--color-btn);
   margin-bottom: 20px;
   text-transform: uppercase;
